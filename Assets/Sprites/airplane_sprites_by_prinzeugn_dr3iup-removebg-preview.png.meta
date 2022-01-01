@@ -1,0 +1,768 @@
+fileFormatVersion: 2
+guid: e9d7625bd10774b39b97c6ae193ec442
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7093467188194083050
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_0
+  - first:
+      213: 8503530636453773352
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_1
+  - first:
+      213: -5007331218745465374
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_2
+  - first:
+      213: -7363658238460039718
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_3
+  - first:
+      213: -7411219452120527402
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_4
+  - first:
+      213: 12928072850103340
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_5
+  - first:
+      213: -8699284725588885081
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_6
+  - first:
+      213: 544151413534094424
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_7
+  - first:
+      213: 6660290500857256196
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_8
+  - first:
+      213: -6462302388709290158
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_9
+  - first:
+      213: 8138742861611144167
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_10
+  - first:
+      213: -8330856515256566014
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_11
+  - first:
+      213: 2003845155259686968
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_12
+  - first:
+      213: -7693738372880693860
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_13
+  - first:
+      213: 2692350290615772976
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_14
+  - first:
+      213: -7616179978915843210
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_15
+  - first:
+      213: -1289764259981096073
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_16
+  - first:
+      213: -4351537779409621601
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_17
+  - first:
+      213: 4275835446515639021
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_18
+  - first:
+      213: -1035091072704312139
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_19
+  - first:
+      213: 1394385522517408043
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_20
+  - first:
+      213: 4828604554032139465
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_21
+  - first:
+      213: 7901466575997454418
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_22
+  - first:
+      213: 2796255762244952490
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_23
+  - first:
+      213: 8294266945195891435
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_24
+  - first:
+      213: 1377727931404727811
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_25
+  - first:
+      213: 1896405339981609003
+    second: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 218
+        width: 61
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0823a23de017260800000000000000
+      internalID: 7093467188194083050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 217
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8208a7a6f0c920670800000000000000
+      internalID: 8503530636453773352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 205
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5e3f959c2628ab0800000000000000
+      internalID: -5007331218745465374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 215
+        width: 61
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adde531b8d70fc990800000000000000
+      internalID: -7363658238460039718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 213
+        width: 61
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd04e3bc2f062990800000000000000
+      internalID: -7411219452120527402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 215
+        width: 59
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c5cd5830eed2000800000000000000
+      internalID: 12928072850103340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 213
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a10b4302aee54780800000000000000
+      internalID: -8699284725588885081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 154
+        width: 62
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854f9bbd3d63d8700800000000000000
+      internalID: 544151413534094424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 153
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409518c3cea1e6c50800000000000000
+      internalID: 6660290500857256196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 141
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f03d9573a4156a0800000000000000
+      internalID: -6462302388709290158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 151
+        width: 61
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e31490038f92f070800000000000000
+      internalID: 8138742861611144167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 149
+        width: 61
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f326d532ad26c80800000000000000
+      internalID: -8330856515256566014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 150
+        width: 61
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83024284d861fcb10800000000000000
+      internalID: 2003845155259686968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 148
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9587a986b95a3590800000000000000
+      internalID: -7693738372880693860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 91
+        width: 62
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037a21b13562d5520800000000000000
+      internalID: 2692350290615772976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 91
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673774359a4ed4690800000000000000
+      internalID: -7616179978915843210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 79
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b05df2d36d91ee0800000000000000
+      internalID: -1289764259981096073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 89
+        width: 61
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9de89fe17b3c93c0800000000000000
+      internalID: -4351537779409621601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 87
+        width: 61
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2a69b2fa1d65b30800000000000000
+      internalID: 4275835446515639021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 88
+        width: 61
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc084d472e92a1f0800000000000000
+      internalID: -1035091072704312139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 86
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29f895be3ad95310800000000000000
+      internalID: 1394385522517408043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 21
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc4be34246a20340800000000000000
+      internalID: 4828604554032139465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 21
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25843f2bcf5a7ad60800000000000000
+      internalID: 7901466575997454418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 21
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1efb1fccb4ec620800000000000000
+      internalID: 2796255762244952490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 21
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea5aac77d72b1370800000000000000
+      internalID: 8294266945195891435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 21
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306338c014cae1310800000000000000
+      internalID: 1377727931404727811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: airplane_sprites_by_prinzeugn_dr3iup-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 21
+        width: 61
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28f1cfeb92615a10800000000000000
+      internalID: 1896405339981609003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

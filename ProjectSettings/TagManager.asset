@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Coins
+  - Obstacle_Horiz
+  - Obstacle_Vert
+  - Coins_Line
+  - Coins_V
+  - Coins_Vert
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2888714723
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1782502341
+    locked: 0
+  - name: Objects
+    uniqueID: 2043249137
+    locked: 0
+  - name: Plane
+    uniqueID: 294886843
+    locked: 0
