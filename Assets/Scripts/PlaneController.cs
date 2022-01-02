@@ -7,30 +7,51 @@ public class PlaneController : MonoBehaviour
 {
 
     public float liftpower = 15.0f;
-    public float thrustpower = 2.0f;
+    public float thrustpower = 2.0f; // (distance)/(time)
     private Rigidbody2D planeRigidBody;
 
     private Vector3 startPos;
 
-    public float lives = 1.0f;
+    public int lives = 3;
     private bool isDead = false;
+
+    public float maxfuel = 100f;
+    private float fuel; // (amount)
+    public float burnRate = 0.1f; // (amount)/(time)
+    public int refillFuel = 20;
 
     public ParticleSystem noozel;
 
+    public Text coinsCollectedLabel;
     private uint coins = 0;
+
+    public Text livesRemainingLabel;
+    public HealthBar healthBar;
+
+    public Text fuelRemainingLabel;
+    public FuelBar fuelBar;
+
+    public Text distanceDoneLabel;
     private float distanceTravelled = 0;
 
-    public Text coinsCollectedLabel;
-    public Text livesRemainingLabel;
-    public Text distanceDoneLabel;
+    public AudioClip coinCollectSound;
+    public AudioClip fuelCollectSound;
+    public AudioSource noozelAudio;
+
+    public ParallaxScroll parallax;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        fuel = maxfuel;
+
         planeRigidBody = GetComponent<Rigidbody2D>();
         livesRemainingLabel.text = lives.ToString();
         startPos = transform.position;
+        healthBar.setMaxHealth(lives);
+        fuelBar.setMaxFuel(maxfuel);
     }
 
     // Update is called once per frame
@@ -50,13 +71,19 @@ public class PlaneController : MonoBehaviour
             Vector2 newVelocity = planeRigidBody.velocity;
             newVelocity.x = thrustpower;
             planeRigidBody.velocity = newVelocity;
+            noozelAudio.volume = 0.4f;
+        }
+        else
+        {
+            noozelAudio.enabled = false;
         }
 
-        AdjustEmissions(!isDead);
+        parallax.offset = transform.position.x;
 
+        AdjustEmissions(!isDead);
     }
 
-    private void Update()
+    void Update()
     {
         Vector3 distanceVector = transform.position - startPos;
         float distanceThisFrame = distanceVector.magnitude;
@@ -65,6 +92,19 @@ public class PlaneController : MonoBehaviour
 
         float distanceShowed = Mathf.Round(distanceTravelled);
         distanceDoneLabel.text = distanceShowed.ToString();
+
+        if (fuel >= 0 & !isDead)
+        {
+            fuel -= burnRate;
+            float fuelShowed = Mathf.Round(fuel);
+            fuelBar.setFuel(fuel);
+            fuelRemainingLabel.text = fuelShowed.ToString();
+        }
+        else
+        {
+            fuel = 0;
+            isDead = true;
+        }
     }
 
     void AdjustEmissions(bool noozelActive)
@@ -82,18 +122,19 @@ public class PlaneController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Coins"))
-        {
-            CollectCoin(collider);
-        }
-        else
-        {
-            HitByLaser(collider);
-        }
+        if (collider.gameObject.CompareTag("Coins")) CollectCoin(collider);
+        else if (collider.gameObject.CompareTag("Fuel")) CollectFuel(collider);
+        else HitByLaser(collider);
     }
 
     void HitByLaser(Collider2D laserCollider)
     {
+        if (!isDead)
+        {
+            AudioSource laserZap = laserCollider.gameObject.GetComponent<AudioSource>();
+            laserZap.Play();
+        }
+
         if (lives == 1)
         {
             lives -= 1;
@@ -101,6 +142,7 @@ public class PlaneController : MonoBehaviour
         }
         else lives -= 1;
 
+        healthBar.setHeath(lives);
         livesRemainingLabel.text = lives.ToString();
     }
 
@@ -109,5 +151,19 @@ public class PlaneController : MonoBehaviour
         coins++;
         coinsCollectedLabel.text = coins.ToString();
         Destroy(coinCollider.gameObject);
+        AudioSource.PlayClipAtPoint(coinCollectSound, transform.position);
+    }
+
+    void CollectFuel(Collider2D fuelCollider)
+    {
+        fuel += refillFuel;
+
+        if (fuel > maxfuel) fuel = maxfuel;
+
+        float fuelShowed = Mathf.Round(fuel);
+        fuelBar.setFuel(fuel);
+        fuelRemainingLabel.text = fuelShowed.ToString();
+        Destroy(fuelCollider.gameObject);
+        AudioSource.PlayClipAtPoint(fuelCollectSound, transform.position);
     }
 }

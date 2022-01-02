@@ -11,13 +11,18 @@ public class StageGenerator : MonoBehaviour
 
     //Obstacles and Coins
     public GameObject[] availableObjects;
+    public GameObject[] availableFuels;
     public List<GameObject> objects;
+    public List<GameObject> fuelItems;
 
     public float objMinDistance = 3.0f;
     public float objMaxDistance = 6.0f;
 
+    public float fuelDistance = 4.0f;
+
     public float obstaclesMinRotation = -90.0f;
     public float obstaclesMaxRotation = 90.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +36,6 @@ public class StageGenerator : MonoBehaviour
 
     void AddStage(float farthestStageEndX)
     {
-        
         int randomStageIndex = Random.Range(0, availableStages.Length);
         GameObject stage = (GameObject)Instantiate(availableStages[randomStageIndex]);
         float stageWidth = stage.transform.Find("Floor").localScale.x;
@@ -43,15 +47,16 @@ public class StageGenerator : MonoBehaviour
     void AddObject(float lastObjectX)
     {
         int randomIndex = Random.Range(0, availableObjects.Length);
-        GameObject obj = (GameObject)Instantiate(availableObjects[randomIndex]);
+        GameObject obj = (GameObject) Instantiate(availableObjects[randomIndex]);
         float objectX = lastObjectX + Random.Range(objMinDistance, objMaxDistance);
         float objectY = 0;
         float objectRot = 0;
 
 
         if (obj.CompareTag("Coins_Line")) objectY = Random.Range(-0.55f, 0.55f);
-        else if (obj.CompareTag("Coins_V")) objectY = Random.Range(-0.55f, 0.35f);
-        else if (obj.CompareTag("Coins_Vert")) objectY = Random.Range(-0.5f, 0.5f);
+        else if (obj.CompareTag("Coins_V")) objectY = Random.Range(-0.55f, 0.3f);
+        else if (obj.CompareTag("Coins_Vert")) objectY = Random.Range(-0.3f, 0.3f);
+        else if (obj.CompareTag("Fuel")) objectY = Random.Range(-0.55f, 0.55f);
         //else if (obj.CompareTag("Obstacle_Horiz")) objectY = Random.Range(-0.6f, 0.6f);
         else if (obj.CompareTag("Obstacle_Vert"))
         {
@@ -63,6 +68,19 @@ public class StageGenerator : MonoBehaviour
         obj.transform.rotation = Quaternion.Euler(Vector3.forward * objectRot);
         
         objects.Add(obj);
+    }
+
+    void AddFuel(float lastFuelX)
+    {
+        int randomIndex = Random.Range(0, availableFuels.Length);
+        GameObject obj = (GameObject) Instantiate(availableFuels[randomIndex]);
+        float objectX = lastFuelX + fuelDistance;
+        float objectY = Random.Range(-0.55f, 0.55f);
+        
+
+        obj.transform.position = new Vector3(objectX, objectY, 0);
+
+        fuelItems.Add(obj);
     }
 
 
@@ -139,21 +157,48 @@ public class StageGenerator : MonoBehaviour
         }
     }
 
+    void GenerateFuelIfRequired()
+    {
+        float playerX = transform.position.x;
+        float removeFuelX = playerX - screenWidthInPoints;
+        float addFuelX = playerX + screenWidthInPoints;
+        float farthestFuelX = 0;
+
+        List<GameObject> fuelToRemove = new List<GameObject>();
+
+
+        foreach (var obj in fuelItems)
+        {
+            float objX = obj.transform.position.x;
+            farthestFuelX = Mathf.Max(farthestFuelX, objX);
+
+            if (objX < removeFuelX)
+            {
+                fuelToRemove.Add(obj);
+            }
+        }
+
+        foreach (var obj in fuelToRemove)
+        {
+            fuelItems.Remove(obj);
+            Destroy(obj);
+        }
+
+        if (farthestFuelX < addFuelX)
+        {
+            AddFuel(farthestFuelX);
+        }
+    }
+
 
     private IEnumerator GeneratorCheck()
     {
         while (true)
         {
             GenerateStageIfRequired();
+            GenerateFuelIfRequired();
             GenerateObjectsIfRequired();
             yield return new WaitForSeconds(0.25f);
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Coins_Line
   - Coins_V
   - Coins_Vert
+  - Fuel
   layers:
   - Default
   - TransparentFX
