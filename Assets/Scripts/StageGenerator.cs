@@ -5,7 +5,9 @@ using UnityEngine;
 public class StageGenerator : MonoBehaviour
 {
     //Stages
-    public GameObject[] availableStages;
+
+    public GameObject[] prefabsStages;
+    //public GameObject availableStages;
     public List<GameObject> currentStages;
     private float screenWidthInPoints;
 
@@ -15,13 +17,20 @@ public class StageGenerator : MonoBehaviour
     public List<GameObject> objects;
     public List<GameObject> fuelItems;
 
-    public float objMinDistance = 3.0f;
-    public float objMaxDistance = 6.0f;
+    public float objMinDistance = 2.5f;
+    public float objMaxDistance = 5.0f;
 
-    public float fuelDistance = 4.0f;
+    public float fuelDistance = 10.0f;
 
     public float obstaclesMinRotation = -90.0f;
     public float obstaclesMaxRotation = 90.0f;
+
+    // Defining the plane to change/see their variables
+    GameObject planePlayer;
+    PlaneController planeScript;
+
+    public int checkChangeStage = 0;
+    public int stageNum = 0;
 
 
     // Start is called before the first frame update
@@ -30,14 +39,21 @@ public class StageGenerator : MonoBehaviour
         float height = 2.0f * Camera.main.orthographicSize;
         screenWidthInPoints = height * Camera.main.aspect;
 
+        planePlayer = GameObject.FindGameObjectWithTag("Player");
+        planeScript = planePlayer.GetComponent<PlaneController>();
+
         StartCoroutine(GeneratorCheck());
     }
 
 
     void AddStage(float farthestStageEndX)
     {
-        int randomStageIndex = Random.Range(0, availableStages.Length);
-        GameObject stage = (GameObject)Instantiate(availableStages[randomStageIndex]);
+        //int randomStageIndex = Random.Range(0, availableStages.Length);
+        //GameObject stage = (GameObject) Instantiate(availableStages[randomStageIndex]);
+
+
+        GameObject stage = (GameObject) Instantiate(prefabsStages[stageNum]);
+
         float stageWidth = stage.transform.Find("Floor").localScale.x;
         float stageCenter = farthestStageEndX + stageWidth * 0.5f;
         stage.transform.position = new Vector3(stageCenter, 0, 0);
@@ -190,6 +206,32 @@ public class StageGenerator : MonoBehaviour
         }
     }
 
+    /* NO FUNCIONA
+    void ChangeStageIfRequired()
+    {
+        if (planeScript.changeStage == true)
+        {
+
+            if (planeScript.timesStageChanged == 1 + checkChangeStage) // (1, 4, 7...)
+            {
+                stageNum = 0;
+            }
+            else if (planeScript.timesStageChanged == 2 + checkChangeStage) // (2, 5, 8...)
+            {
+                stageNum = 1;
+            }
+            else if (planeScript.timesStageChanged == 3 + checkChangeStage)// (3, 6, 9...)
+            {
+                stageNum = 2;
+
+                checkChangeStage += 3;
+            }
+
+            planeScript.changeStage = false;
+        }
+    }
+    */
+
 
     private IEnumerator GeneratorCheck()
     {
@@ -198,6 +240,7 @@ public class StageGenerator : MonoBehaviour
             GenerateStageIfRequired();
             GenerateFuelIfRequired();
             GenerateObjectsIfRequired();
+            //ChangeStageIfRequired();
             yield return new WaitForSeconds(0.25f);
         }
     }

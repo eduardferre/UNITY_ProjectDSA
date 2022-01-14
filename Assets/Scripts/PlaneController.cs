@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlaneController : MonoBehaviour
 {
 
-    public float liftpower = 15.0f;
-    public float thrustpower = 2.0f; // (distance)/(time)
+    public float liftpower = 10.0f;
+    public float thrustpower = 2f; // (distance)/(time)
     private Rigidbody2D planeRigidBody;
 
     private Vector3 startPos;
@@ -17,8 +17,8 @@ public class PlaneController : MonoBehaviour
 
     public float maxfuel = 100f;
     private float fuel; // (amount)
-    public float burnRate = 0.1f; // (amount)/(time)
-    public int refillFuel = 20;
+    public float burnRate = 0.075f; // (amount)/(time)
+    public int refillFuel = 25;
 
     public ParticleSystem noozel;
 
@@ -34,18 +34,25 @@ public class PlaneController : MonoBehaviour
     public Text distanceDoneLabel;
     private float distanceTravelled = 0;
 
+    public Text timeFlyingLabel;
+    private float timeFlying = 0;
+
     public AudioClip coinCollectSound;
     public AudioClip fuelCollectSound;
     public AudioSource noozelAudio;
 
     public ParallaxScroll parallax;
 
+    public int timesStageChanged = 1;
+    public bool changeStage = false;
+    private float distanceBetweenStages = 0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
         fuel = maxfuel;
+        distanceBetweenStages = Random.Range(250, 500); // Stages will change randomly between 250-500m since the previous stage appeared
 
         planeRigidBody = GetComponent<Rigidbody2D>();
         livesRemainingLabel.text = lives.ToString();
@@ -93,6 +100,14 @@ public class PlaneController : MonoBehaviour
         float distanceShowed = Mathf.Round(distanceTravelled);
         distanceDoneLabel.text = distanceShowed.ToString();
 
+        if (!isDead)
+        {
+            timeFlying += Time.deltaTime;
+            float timeFly = Mathf.Round(timeFlying);
+            timeFly = Mathf.Round(timeFlying * 10f) / 10f;
+            timeFlyingLabel.text = "time: " + timeFly.ToString() + "0s";
+        }
+        
         if (fuel >= 0 & !isDead)
         {
             fuel -= burnRate;
@@ -104,6 +119,16 @@ public class PlaneController : MonoBehaviour
         {
             fuel = 0;
             isDead = true;
+        }
+
+        // Change of Stage and Increase in Difficulty
+        if (distanceTravelled > distanceBetweenStages * timesStageChanged & !isDead) 
+        {
+            distanceBetweenStages = Random.Range(250, 500); // Once the stage has changed, the following stage will be generated randomly between 250-500m
+            timesStageChanged++;
+            changeStage = true;
+
+            thrustpower += 0.15f * timesStageChanged;
         }
     }
 
@@ -133,14 +158,17 @@ public class PlaneController : MonoBehaviour
         {
             AudioSource laserZap = laserCollider.gameObject.GetComponent<AudioSource>();
             laserZap.Play();
-        }
 
-        if (lives == 1)
-        {
-            lives -= 1;
-            isDead = true;
+            if (lives > 1)
+            {
+                lives -= 1;
+            }
+            else
+            {
+                lives = 0;
+                isDead = true;
+            }
         }
-        else lives -= 1;
 
         healthBar.setHeath(lives);
         livesRemainingLabel.text = lives.ToString();
@@ -156,14 +184,17 @@ public class PlaneController : MonoBehaviour
 
     void CollectFuel(Collider2D fuelCollider)
     {
-        fuel += refillFuel;
+        if (!isDead)
+        {
+            fuel += refillFuel;
 
-        if (fuel > maxfuel) fuel = maxfuel;
+            if (fuel > maxfuel) fuel = maxfuel;
 
-        float fuelShowed = Mathf.Round(fuel);
-        fuelBar.setFuel(fuel);
-        fuelRemainingLabel.text = fuelShowed.ToString();
-        Destroy(fuelCollider.gameObject);
-        AudioSource.PlayClipAtPoint(fuelCollectSound, transform.position);
+            float fuelShowed = Mathf.Round(fuel);
+            fuelBar.setFuel(fuel);
+            fuelRemainingLabel.text = fuelShowed.ToString();
+            Destroy(fuelCollider.gameObject);
+            AudioSource.PlayClipAtPoint(fuelCollectSound, transform.position);
+        }
     }
 }
