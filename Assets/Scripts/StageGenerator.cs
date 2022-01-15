@@ -20,7 +20,7 @@ public class StageGenerator : MonoBehaviour
     public float objMinDistance = 2.5f;
     public float objMaxDistance = 5.0f;
 
-    public float fuelDistance = 10.0f;
+    public float fuelDistance = 8.0f;
 
     public float obstaclesMinRotation = -90.0f;
     public float obstaclesMaxRotation = 90.0f;
@@ -28,18 +28,28 @@ public class StageGenerator : MonoBehaviour
     // Defining the plane to change/see their variables
     GameObject planePlayer;
     PlaneController planeScript;
+    Camera mainCamera;
+    CameraFollow cameraScript;
 
     public int checkChangeStage = 0;
     public int stageNum = 0;
+
+    public string namePlane;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // AQUÍ ÉS ON ES CRIDARÀ EL NOM DE L'AVIÓ
+        namePlane = "Airbus";
+
         float height = 2.0f * Camera.main.orthographicSize;
         screenWidthInPoints = height * Camera.main.aspect;
 
-        planePlayer = GameObject.FindGameObjectWithTag("Player");
+        mainCamera = Camera.main;
+        cameraScript = mainCamera.GetComponent<CameraFollow>();
+
+        planePlayer = GameObject.FindGameObjectWithTag(namePlane);
         planeScript = planePlayer.GetComponent<PlaneController>();
 
         StartCoroutine(GeneratorCheck());
@@ -237,10 +247,14 @@ public class StageGenerator : MonoBehaviour
     {
         while (true)
         {
-            GenerateStageIfRequired();
-            GenerateFuelIfRequired();
-            GenerateObjectsIfRequired();
-            //ChangeStageIfRequired();
+            if (cameraScript.OK)
+            {
+                GenerateStageIfRequired();
+                GenerateFuelIfRequired();
+                GenerateObjectsIfRequired();
+                //ChangeStageIfRequired();
+            }
+
             yield return new WaitForSeconds(0.25f);
         }
     }

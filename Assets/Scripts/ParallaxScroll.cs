@@ -26,10 +26,15 @@ public class ParallaxScroll : MonoBehaviour
 
     public int checkChangeStage = 0;
 
+    public string namePlane;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        // AQUÍ ÉS ON ES CRIDARÀ EL NOM DE L'AVIÓ
+        namePlane = "Airbus";
+
         backgrounds[1].enabled = false;
         background_builds[1].enabled = false;
         middles[1].enabled = false;
@@ -40,7 +45,7 @@ public class ParallaxScroll : MonoBehaviour
         foreground_builds[2].enabled = false;
 
 
-        planePlayer = GameObject.FindGameObjectWithTag("Player");
+        planePlayer = GameObject.FindGameObjectWithTag(namePlane);
         planeScript = planePlayer.GetComponent<PlaneController>();
     }
 

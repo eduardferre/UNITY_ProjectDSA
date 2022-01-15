@@ -11,6 +11,11 @@ TagManager:
   - Coins_V
   - Coins_Vert
   - Fuel
+  - Cessna
+  - Airbus
+  - Acrobatic
+  - Fighter
+  - Helicopter
   layers:
   - Default
   - TransparentFX

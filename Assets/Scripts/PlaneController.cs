@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlaneController : MonoBehaviour
 {
-
     public float liftpower = 10.0f;
     public float thrustpower = 2f; // (distance)/(time)
     private Rigidbody2D planeRigidBody;
@@ -66,7 +65,7 @@ public class PlaneController : MonoBehaviour
     {
         bool liftActive = Input.GetButton("Fire1");
         bool descendActive = Input.GetButton("Fire2");
-        
+
         liftActive = liftActive && !isDead;
         descendActive = descendActive && !isDead;
 
@@ -107,7 +106,7 @@ public class PlaneController : MonoBehaviour
             timeFly = Mathf.Round(timeFlying * 10f) / 10f;
             timeFlyingLabel.text = "time: " + timeFly.ToString() + "0s";
         }
-        
+
         if (fuel >= 0 & !isDead)
         {
             fuel -= burnRate;
@@ -122,7 +121,7 @@ public class PlaneController : MonoBehaviour
         }
 
         // Change of Stage and Increase in Difficulty
-        if (distanceTravelled > distanceBetweenStages * timesStageChanged & !isDead) 
+        if (distanceTravelled > distanceBetweenStages * timesStageChanged & !isDead)
         {
             distanceBetweenStages = Random.Range(250, 500); // Once the stage has changed, the following stage will be generated randomly between 250-500m
             timesStageChanged++;

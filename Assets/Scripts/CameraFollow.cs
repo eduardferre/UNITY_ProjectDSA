@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject targetObject;
+    public GameObject[] planes;
+    public string namePlane;
+    public bool OK = false;
+
+    private GameObject targetObject;
     private float distanceToTarget;
 
     // Start is called before the first frame update
     void Start()
     {
+        // AQUÍ ÉS ON ES CRIDARÀ EL NOM DE L'AVIÓ
+        namePlane = "Airbus";
+
+
+        foreach (var plane in planes)
+        {
+            if (plane.tag != namePlane) Destroy(plane.gameObject);
+        }
+
+        targetObject = GameObject.FindGameObjectWithTag(namePlane);
+        //targetObject.SetActive(true);
+
+        OK = true;
+
         distanceToTarget = transform.position.x - targetObject.transform.position.x;
     }
 
