@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlaneController : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlaneController : MonoBehaviour
     public ParticleSystem noozel;
 
     public Text coinsCollectedLabel;
-    private uint coins = 0;
+    public static uint coins = 0;
 
     public Text livesRemainingLabel;
     public HealthBar healthBar;
@@ -31,10 +32,10 @@ public class PlaneController : MonoBehaviour
     public FuelBar fuelBar;
 
     public Text distanceDoneLabel;
-    private float distanceTravelled = 0;
+    public static float distanceTravelled = 0;
 
     public Text timeFlyingLabel;
-    private float timeFlying = 0;
+    public static float timeFlying = 0;
 
     public AudioClip coinCollectSound;
     public AudioClip fuelCollectSound;
@@ -46,10 +47,17 @@ public class PlaneController : MonoBehaviour
     public bool changeStage = false;
     private float distanceBetweenStages = 0f;
 
+    public GameOverScreen gameOverScreen;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        distanceTravelled = 0;
+        timeFlying = 0;
+        coins = 0;
+
+
         fuel = maxfuel;
         distanceBetweenStages = Random.Range(250, 500); // Stages will change randomly between 250-500m since the previous stage appeared
 
@@ -118,6 +126,7 @@ public class PlaneController : MonoBehaviour
         {
             fuel = 0;
             isDead = true;
+            GameOver();
         }
 
         // Change of Stage and Increase in Difficulty
@@ -195,5 +204,10 @@ public class PlaneController : MonoBehaviour
             Destroy(fuelCollider.gameObject);
             AudioSource.PlayClipAtPoint(fuelCollectSound, transform.position);
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOverScene", LoadSceneMode.Additive);
     }
 }
