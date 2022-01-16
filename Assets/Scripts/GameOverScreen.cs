@@ -19,14 +19,10 @@ public class GameOverScreen : MonoBehaviour
         distanceFly = PlaneController.distanceTravelled;
         timeFly = PlaneController.timeFlying;
         coinsCollected = PlaneController.coins;
-    }
 
-    void Update()
-    {
-
-        distanceText.text = "You have flown " + distanceFly.ToString() + " meters";
-        timeText.text = "Your game lasted " + timeFly.ToString() + " seconds";
-        coinsText.text = "You have collected " + coinsCollected.ToString() + " Bitcoins";
+        distanceText.text = "distance: " + distanceFly.ToString() + " m";
+        coinsText.text = "coins: " + coinsCollected.ToString() + " B";
+        timeText.text = "time: " + timeFly.ToString() + " s";
     }
 
     public void RestartButton()

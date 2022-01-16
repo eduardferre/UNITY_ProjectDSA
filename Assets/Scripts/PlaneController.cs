@@ -14,6 +14,7 @@ public class PlaneController : MonoBehaviour
 
     public int lives = 3;
     private bool isDead = false;
+    private bool gameOver = false;
 
     public float maxfuel = 100f;
     private float fuel; // (amount)
@@ -126,8 +127,10 @@ public class PlaneController : MonoBehaviour
         {
             fuel = 0;
             isDead = true;
-            GameOver();
+            gameOver = true;
         }
+
+        if (gameOver) GameOver();
 
         // Change of Stage and Increase in Difficulty
         if (distanceTravelled > distanceBetweenStages * timesStageChanged & !isDead)
@@ -208,6 +211,15 @@ public class PlaneController : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("GameOverScene", LoadSceneMode.Additive);
+        gameOver = false;
+
+        float delayTime = 8f;
+
+        Invoke("ChangeScene", delayTime);
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene("GameOverScene");
     }
 }
