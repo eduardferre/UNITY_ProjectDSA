@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,17 +13,25 @@ public class GameOverScreen : MonoBehaviour
 
     public float distanceFly;
     public float timeFly;
-    public uint coinsCollected;
+    public int coinsCollected;
 
     void Start()
     {
         distanceFly = PlaneController.distanceTravelled;
         timeFly = PlaneController.timeFlying;
-        coinsCollected = PlaneController.coins;
+        coinsCollected = (int) PlaneController.coins;
 
         distanceText.text = "distance: " + distanceFly.ToString() + " m";
         coinsText.text = "coins: " + coinsCollected.ToString() + " B";
         timeText.text = "time: " + timeFly.ToString() + " s";
+        
+        
+        #if UNITY_ANDROID
+        AndroidJavaClass unityComms = new AndroidJavaClass("edu.upc.dsa.UnityComms");
+        unityComms.CallStatic("endGame", distanceFly, timeFly, coinsCollected);
+        
+        
+        #endif
     }
 
     public void RestartButton()
