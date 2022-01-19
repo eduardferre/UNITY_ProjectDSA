@@ -13,7 +13,7 @@ public class StartManager : MonoBehaviour
 
     public void StartButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Insignia");
     }
 
     // Update is called once per frame
