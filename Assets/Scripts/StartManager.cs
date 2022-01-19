@@ -15,10 +15,4 @@ public class StartManager : MonoBehaviour
     {
         SceneManager.LoadScene("Insignia");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

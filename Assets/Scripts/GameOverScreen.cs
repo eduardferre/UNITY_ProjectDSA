@@ -36,11 +36,11 @@ public class GameOverScreen : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Insignia");
+        SceneManager.LoadScene("StartGame");
     }
 
     public void MainMenuButton()
     {
-        SceneManager.LoadScene("StartGame");
+        // Quit Game to Android
     }
 }
