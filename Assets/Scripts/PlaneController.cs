@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlaneController : MonoBehaviour
 {
+    // fer-ho amb percentatges i afegir una força que sigui gravity desactivant la que hi ha al prefab, aixi poder fer lo del pes (calculs al Drive)
+
     public float liftpower = 10.0f;
     public float thrustpower = 2f; // (distance)/(time)
     private Rigidbody2D planeRigidBody;

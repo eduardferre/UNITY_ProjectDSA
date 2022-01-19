@@ -27,9 +27,9 @@ public class GameOverScreen : MonoBehaviour
         
         
         #if UNITY_ANDROID
+
         AndroidJavaClass unityComms = new AndroidJavaClass("edu.upc.dsa.UnityComms");
         unityComms.CallStatic("endGame", distanceFly, timeFly, coinsCollected);
-        
         
         #endif
     }
@@ -42,5 +42,6 @@ public class GameOverScreen : MonoBehaviour
     public void MainMenuButton()
     {
         // Quit Game to Android
+        Application.Quit();
     }
 }
