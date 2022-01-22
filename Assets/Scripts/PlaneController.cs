@@ -31,6 +31,8 @@ public class PlaneController : MonoBehaviour
     public float liftpower_max = 25f;
     public float burnRate_max = 0.13f;
 
+    public bool liftActive;
+    public bool descendActive;
 
     public float maxfuel = 100f;
     private float fuel; // (amount)
@@ -71,6 +73,7 @@ public class PlaneController : MonoBehaviour
     private bool gameOver = false;
 
     private int i = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -121,11 +124,9 @@ public class PlaneController : MonoBehaviour
             i++;
         }
 
-
-
-        bool liftActive = Input.GetButton("Fire1");
-        bool descendActive = Input.GetButton("Fire2");
-
+        //bool liftActive = Input.GetButton("Fire1");
+        //bool descendActive = Input.GetButton("Fire2");
+        
         liftActive = liftActive && !isDead;
         descendActive = descendActive && !isDead;
 

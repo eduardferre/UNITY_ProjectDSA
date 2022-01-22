@@ -71,8 +71,9 @@ public class AndroidBackButton : MonoBehaviour
         lift = lift_max * velY(%)
         burnRate = burnRate_max * fuel(%)
 
+        
 
-        EXAMPLE FOR UNITY
+        //EXAMPLE FOR UNITY
 
         model = "Airbus";
         enginesLife = 4;
@@ -81,6 +82,7 @@ public class AndroidBackButton : MonoBehaviour
         fuel = 60f;
 
         */
+
     }
 
     void FixedUpdate()
