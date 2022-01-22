@@ -152,6 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a761d5d432e138bbd328c4492e8579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: 
+  enginesLife: 0
+  velX: 0
+  velY: 0
+  fuel: 0
+  gravity: 0
 --- !u!4 &1979395
 Transform:
   m_ObjectHideFlags: 0
@@ -572,6 +578,7 @@ MonoBehaviour:
   offset: 0
   checkChangeStage: 0
   namePlane: 
+  androidInfoScript: {fileID: 1979394}
 --- !u!1001 &308698047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -579,6 +586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
       propertyPath: fuelBar
       value: 
@@ -592,9 +603,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112087337}
     - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
+      propertyPath: burnRate_max
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
+      propertyPath: liftpower_max
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
+      propertyPath: thrustpower_max
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
       propertyPath: timeFlyingLabel
       value: 
       objectReference: {fileID: 1818031335}
+    - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
     - target: {fileID: 1396019406556343238, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
       propertyPath: distanceDoneLabel
       value: 
@@ -668,6 +695,10 @@ PrefabInstance:
       value: Cessna
       objectReference: {fileID: 0}
     - target: {fileID: 5921641802738249598, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
+    - target: {fileID: 5921641802738249598, guid: 70a35e746fd9c44c59ba7b0724f6bfe4, type: 3}
       propertyPath: currentStages.Array.data[0]
       value: 
       objectReference: {fileID: 2046875096}
@@ -705,6 +736,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 528041059}
     - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: burnRate
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
       propertyPath: parallax
       value: 
       objectReference: {fileID: 132963840}
@@ -713,9 +748,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112087337}
     - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: liftpower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: thrustpower
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: burnRate_max
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: liftpower_max
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: thrustpower_max
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
       propertyPath: timeFlyingLabel
       value: 
       objectReference: {fileID: 1818031335}
+    - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
     - target: {fileID: 4111656283733188720, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
       propertyPath: distanceDoneLabel
       value: 
@@ -776,6 +835,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6219472288322813742, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
     - target: {fileID: 6219472288322813742, guid: 98d9b35b27a9a4300957918872ab1c39, type: 3}
       propertyPath: currentStages.Array.data[0]
       value: 
@@ -1157,6 +1220,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2785028590463581760, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
+    - target: {fileID: 2785028590463581760, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
       propertyPath: currentStages.Array.data[0]
       value: 
       objectReference: {fileID: 2046875096}
@@ -1173,9 +1240,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112087337}
     - target: {fileID: 2785028590463581761, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
+      propertyPath: burnRate_max
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785028590463581761, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
+      propertyPath: liftpower_max
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785028590463581761, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
+      propertyPath: thrustpower_max
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785028590463581761, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
       propertyPath: timeFlyingLabel
       value: 
       objectReference: {fileID: 1818031335}
+    - target: {fileID: 2785028590463581761, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
     - target: {fileID: 2785028590463581761, guid: 0aa2ea1f6b26640c09abde3c1f905166, type: 3}
       propertyPath: distanceDoneLabel
       value: 
@@ -1373,6 +1456,7 @@ MonoBehaviour:
   - {fileID: 578406226}
   namePlane: 
   OK: 0
+  androidInfoScript: {fileID: 1979394}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2296,6 +2380,10 @@ PrefabInstance:
       value: Acrobatic
       objectReference: {fileID: 0}
     - target: {fileID: 5388644881936707682, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
+    - target: {fileID: 5388644881936707682, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
       propertyPath: currentStages.Array.data[0]
       value: 
       objectReference: {fileID: 2046875096}
@@ -2312,9 +2400,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112087337}
     - target: {fileID: 6685895639309045259, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
+      propertyPath: burnRate_max
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685895639309045259, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
+      propertyPath: liftpower_max
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685895639309045259, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
+      propertyPath: thrustpower_max
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685895639309045259, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
       propertyPath: timeFlyingLabel
       value: 
       objectReference: {fileID: 1818031335}
+    - target: {fileID: 6685895639309045259, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
     - target: {fileID: 6685895639309045259, guid: 73659c51cca2148e98dbf3877938189d, type: 3}
       propertyPath: distanceDoneLabel
       value: 
@@ -2814,6 +2918,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3088823070404012915, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
+    - target: {fileID: 3088823070404012915, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
       propertyPath: currentStages.Array.data[0]
       value: 
       objectReference: {fileID: 2046875096}
@@ -2830,9 +2938,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112087337}
     - target: {fileID: 6555392614802855310, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
+      propertyPath: burnRate_max
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555392614802855310, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
+      propertyPath: liftpower_max
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555392614802855310, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
+      propertyPath: thrustpower_max
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555392614802855310, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
       propertyPath: timeFlyingLabel
       value: 
       objectReference: {fileID: 1818031335}
+    - target: {fileID: 6555392614802855310, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
+      propertyPath: androidInfoScript
+      value: 
+      objectReference: {fileID: 1979394}
     - target: {fileID: 6555392614802855310, guid: ca447c2e120b14c1d82948e6371c3218, type: 3}
       propertyPath: distanceDoneLabel
       value: 

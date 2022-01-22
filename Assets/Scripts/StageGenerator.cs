@@ -20,7 +20,7 @@ public class StageGenerator : MonoBehaviour
     public float objMinDistance = 2.5f;
     public float objMaxDistance = 5.0f;
 
-    public float fuelDistance = 8.0f;
+    public float fuelDistance = 6.0f;
 
     public float obstaclesMinRotation = -90.0f;
     public float obstaclesMaxRotation = 90.0f;
@@ -36,22 +36,13 @@ public class StageGenerator : MonoBehaviour
 
     public string namePlane;
 
+    public AndroidBackButton androidInfoScript;
+
+    private int i = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        // AQUÍ ÉS ON ES CRIDARÀ EL NOM DE L'AVIÓ
-        namePlane = "Airbus";
-
-        float height = 2.0f * Camera.main.orthographicSize;
-        screenWidthInPoints = height * Camera.main.aspect;
-
-        mainCamera = Camera.main;
-        cameraScript = mainCamera.GetComponent<CameraFollow>();
-
-        planePlayer = GameObject.FindGameObjectWithTag(namePlane);
-        planeScript = planePlayer.GetComponent<PlaneController>();
-
         StartCoroutine(GeneratorCheck());
     }
 
@@ -247,6 +238,23 @@ public class StageGenerator : MonoBehaviour
     {
         while (true)
         {
+            if (i == 0)
+            {
+                // AQUÍ ÉS ON ES CRIDARÀ EL NOM DE L'AVIÓ
+                namePlane = "Cessna";
+
+                float height = 2.0f * Camera.main.orthographicSize;
+                screenWidthInPoints = height * Camera.main.aspect;
+
+                mainCamera = Camera.main;
+                cameraScript = mainCamera.GetComponent<CameraFollow>();
+
+                planePlayer = GameObject.FindGameObjectWithTag(namePlane);
+                planeScript = planePlayer.GetComponent<PlaneController>();
+
+                i++;
+            }
+
             if (cameraScript.OK)
             {
                 GenerateStageIfRequired();

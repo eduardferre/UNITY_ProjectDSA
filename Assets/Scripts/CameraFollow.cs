@@ -11,12 +11,13 @@ public class CameraFollow : MonoBehaviour
     private GameObject targetObject;
     private float distanceToTarget;
 
+    public AndroidBackButton androidInfoScript;
+
     // Start is called before the first frame update
     void Start()
     {
         // AQUÍ ÉS ON ES CRIDARÀ EL NOM DE L'AVIÓ
-        namePlane = "Airbus";
-
+        namePlane = androidInfoScript.model;
 
         foreach (var plane in planes)
         {

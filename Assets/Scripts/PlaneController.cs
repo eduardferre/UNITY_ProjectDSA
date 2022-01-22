@@ -8,20 +8,37 @@ public class PlaneController : MonoBehaviour
 {
     // fer-ho amb percentatges i afegir una força que sigui gravity desactivant la que hi ha al prefab, aixi poder fer lo del pes (calculs al Drive)
 
-    public float liftpower = 10.0f;
+
+    // PARAMETERS
+
+    /*
+    public int lifes = 3;
     public float thrustpower = 2f; // (distance)/(time)
-    private Rigidbody2D planeRigidBody;
+    public float liftpower = 10.0f;
+    public float burnRate = 0.075f; // (amount)/(time)
+    */
 
-    private Vector3 startPos;
+    public AndroidBackButton androidInfoScript;
 
-    public int lives = 3;
-    private bool isDead = false;
-    private bool gameOver = false;
+
+    public string model;
+    public int lifes;
+    public float thrustpower; // (distance)/(time)
+    public float liftpower;
+    public float burnRate; // (amount)/(time)
+
+    public float thrustpower_max = 3.5f;
+    public float liftpower_max = 25f;
+    public float burnRate_max = 0.13f;
+
 
     public float maxfuel = 100f;
     private float fuel; // (amount)
-    public float burnRate = 0.075f; // (amount)/(time)
     public int refillFuel = 25;
+
+    private Rigidbody2D planeRigidBody;
+
+    private Vector3 startPos;
 
     public ParticleSystem noozel;
 
@@ -50,8 +67,10 @@ public class PlaneController : MonoBehaviour
     public bool changeStage = false;
     private float distanceBetweenStages = 0f;
 
-    public GameOverScreen gameOverScreen;
+    private bool isDead = false;
+    private bool gameOver = false;
 
+    private int i = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -62,18 +81,48 @@ public class PlaneController : MonoBehaviour
 
 
         fuel = maxfuel;
+        fuelBar.setMaxFuel(maxfuel);
         distanceBetweenStages = Random.Range(250, 500); // Stages will change randomly between 250-500m since the previous stage appeared
 
         planeRigidBody = GetComponent<Rigidbody2D>();
-        livesRemainingLabel.text = lives.ToString();
+        livesRemainingLabel.text = lifes.ToString();
         startPos = transform.position;
-        healthBar.setMaxHealth(lives);
+
+        /*
+        model = androidInfoScript.model;
+        lifes = androidInfoScript.enginesLife;
+        thrustpower = thrustpower_max * (androidInfoScript.velX / 100);
+        liftpower = liftpower_max * (androidInfoScript.velY / 100);
+        burnRate = burnRate_max * (androidInfoScript.fuel / 100);
+
+        planeRigidBody = GetComponent<Rigidbody2D>();
+        livesRemainingLabel.text = lifes.ToString();
+        startPos = transform.position;
+        healthBar.setMaxHealth(lifes);
         fuelBar.setMaxFuel(maxfuel);
+        */
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (i == 0)
+        {
+            // Defining the parameters from Android
+
+            model = androidInfoScript.model;
+            lifes = androidInfoScript.enginesLife;
+            thrustpower = thrustpower_max * (androidInfoScript.velX / 100);
+            liftpower = liftpower_max * (androidInfoScript.velY / 100);
+            burnRate = burnRate_max * (androidInfoScript.fuel / 100);
+
+            healthBar.setMaxHealth(lifes);
+
+            i++;
+        }
+
+
+
         bool liftActive = Input.GetButton("Fire1");
         bool descendActive = Input.GetButton("Fire2");
 
@@ -172,19 +221,19 @@ public class PlaneController : MonoBehaviour
             AudioSource laserZap = laserCollider.gameObject.GetComponent<AudioSource>();
             laserZap.Play();
 
-            if (lives > 1)
+            if (lifes > 1)
             {
-                lives -= 1;
+                lifes -= 1;
             }
             else
             {
-                lives = 0;
+                lifes = 0;
                 isDead = true;
             }
         }
 
-        healthBar.setHeath(lives);
-        livesRemainingLabel.text = lives.ToString();
+        healthBar.setHeath(lifes);
+        livesRemainingLabel.text = lifes.ToString();
     }
 
     void CollectCoin(Collider2D coinCollider)

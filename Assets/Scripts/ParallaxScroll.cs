@@ -28,12 +28,14 @@ public class ParallaxScroll : MonoBehaviour
 
     public string namePlane;
 
+    public AndroidBackButton androidInfoScript;
+
 
     // Start is called before the first frame update
     void Start()
     {
         // AQUÍ ÉS ON ES CRIDARÀ EL NOM DE L'AVIÓ
-        namePlane = "Airbus";
+        namePlane = androidInfoScript.model;
 
         backgrounds[1].enabled = false;
         background_builds[1].enabled = false;
