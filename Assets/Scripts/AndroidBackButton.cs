@@ -47,7 +47,7 @@ public class AndroidBackButton : MonoBehaviour
               Debug.Log("gravity: " +gravity);
               Debug.Log("minweight: "+minWeight);
               Debug.Log("===PASSED PLANE INFO===");
-  
+          
             #endif
 
 
@@ -74,7 +74,7 @@ public class AndroidBackButton : MonoBehaviour
         
 
         //EXAMPLE FOR UNITY
-
+        
         model = "Airbus";
         enginesLife = 4;
         velX = 40f;
@@ -82,7 +82,6 @@ public class AndroidBackButton : MonoBehaviour
         fuel = 60f;
 
         */
-
     }
 
     void FixedUpdate()

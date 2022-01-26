@@ -85,7 +85,7 @@ public class PlaneController : MonoBehaviour
 
         fuel = maxfuel;
         fuelBar.setMaxFuel(maxfuel);
-        distanceBetweenStages = Random.Range(250, 500); // Stages will change randomly between 250-500m since the previous stage appeared
+        distanceBetweenStages = Random.Range(10, 20); // Stages will change randomly between 250-500m since the previous stage appeared
 
         planeRigidBody = GetComponent<Rigidbody2D>();
         livesRemainingLabel.text = lifes.ToString();
@@ -114,7 +114,7 @@ public class PlaneController : MonoBehaviour
             // Defining the parameters from Android
 
             model = androidInfoScript.model;
-            lifes = androidInfoScript.enginesLife;
+            lifes = androidInfoScript.enginesLife / 10;
             thrustpower = thrustpower_max * (androidInfoScript.velX / 100);
             liftpower = liftpower_max * (androidInfoScript.velY / 100);
             burnRate = burnRate_max * (androidInfoScript.fuel / 100);
@@ -187,7 +187,7 @@ public class PlaneController : MonoBehaviour
         // Change of Stage and Increase in Difficulty
         if (distanceTravelled > distanceBetweenStages * timesStageChanged & !isDead)
         {
-            distanceBetweenStages = Random.Range(250, 500); // Once the stage has changed, the following stage will be generated randomly between 250-500m
+            distanceBetweenStages = Random.Range(10, 20); // Once the stage has changed, the following stage will be generated randomly between 250-500m
             timesStageChanged++;
             changeStage = true;
 
